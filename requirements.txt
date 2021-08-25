@@ -12,14 +12,14 @@ Jinja2==3.0.1
 joblib==1.0.1
 MarkupSafe==2.0.1
 my-package==0.0.0
-numexpr @ file:///C:/ci/numexpr_1618856761305/work
-numpy @ file:///C:/ci/numpy_and_numpy_base_1626271861146/work
-pandas @ file:///C:/ci/pandas_1627570311072/work
-python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
-pytz @ file:///tmp/build/80754af9/pytz_1612215392582/work
+numexpr
+numpy
+pandas
+python-dateutil
+pytz
 scikit-learn==0.24.2
 scipy==1.7.1
-six @ file:///tmp/build/80754af9/six_1623709665295/work
+six
 sklearn==0.0
 soupsieve==2.2.1
 threadpoolctl==2.2.0
