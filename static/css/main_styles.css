@@ -65,6 +65,17 @@ h2 {
   background-color: rgba(82, 82, 82, 0.781);
 }
 
+h3 {
+  color: white;
+  font-family: Spartan;
+  font-size: 1em;
+  font-weight: 50;
+  display: inline-block;
+  width: 100%;
+  padding: 8px;
+  background-color: rgba(82, 82, 82, 0.781);
+}
+
 ul {
   list-style-type: none;
   margin: 0;
