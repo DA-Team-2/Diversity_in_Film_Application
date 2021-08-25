@@ -14,10 +14,6 @@ itsdangerous==2.0.1
 Jinja2==3.0.1
 joblib==1.0.1
 MarkupSafe==2.0.1
-mkl-fft==1.3.0
-mkl-random
-mkl-service==2.4.0
-my-package==0.0.0
 numexpr
 numpy
 pandas
