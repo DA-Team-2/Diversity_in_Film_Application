@@ -10,3 +10,12 @@ h1 {
   font-weight: bolder;
   padding: 20px;
 }
+h3 {
+  font-family: Spartan;
+  font-size: 18px;
+  font-weight: bolder;
+  color: black;
+  background-color: #e9ecef;
+  margin: 0;
+  padding-top: 20px;
+}

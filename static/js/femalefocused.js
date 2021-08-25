@@ -9,7 +9,7 @@ function buildBubble() {
   // Get needed data
   var revenue = femaledata.map(d => d.revenue);
   var budget = femaledata.map(d => d.budget);
-  var similarity = femaledata.map(d => d.similarity_score*200);
+  var similarity = femaledata.map(d => d.similarity_score*400);
   var title = femaledata.map(d => d.title);
   var genres = femaledata.map(d => d.genres);
   var director = femaledata.map(d => d.director);

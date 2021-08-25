@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-control" content="no-cache">
   <link rel="icon" href="https://www.nicepng.com/png/full/417-4175624_free-download-female-gender-sign-png-clipart-gender.png" type="image/x-icon">
 
   <title>Female Focused Movie Recommendations</title>
@@ -47,11 +48,11 @@
       <div class="row">
         <div class="col-md-12 jumbotron text-center">
           <h1>Female Focused Movie Recommendations</h1>
+          <!-- Get the title of search -->
+          <div id="displayTitle">
+            <h3>Selected title: {{ title }}</h3>
+          </div>
         </div>
-      </div>
-      <!-- Get the title of search -->
-      <div id="displayTitle">
-        <span>You searched for: {{ title }}</span>
       </div>
       <div class="row">
         <div class="col-md-12">

@@ -1,8 +1,7 @@
-#import psycopg2
 #import pandas as pd
-from flask import Flask, render_template, redirect, request, url_for, make_response
+from flask import Flask, render_template, request, make_response
 import similarity
-import time 
+
 # Create an instance of Flask
 app = Flask(__name__)
 
@@ -11,7 +10,7 @@ app = Flask(__name__)
 def index():
   name = request.cookies.get('search')
   # Return index template
-  return render_template("index.html", title=name)
+  return render_template("index.html", title=f"Your searched for: {name}")
 
 # Route to similarity.py and function for ML and filter
 @app.route("/similarity_scores", methods=['POST', 'GET'])
@@ -23,11 +22,11 @@ def similarity_scores():
       # Define the name of movie
       name_of_movie = similarity.similarity(title)
     except IndexError:
-      return render_template("index.html", title=f"{title} Not a vaild entry.  Please try again!")
+      return render_template("index.html", title=f"{title} is not a vaild entry.  Please try again!")
 
   # Define the response
   title = title.title()
-  resp = make_response(render_template('searched.html', title=title))
+  resp = make_response(render_template('searched.html', title=f"Your searched for: {title}"))
   resp.set_cookie('search', title)
 
   return resp
@@ -43,7 +42,7 @@ def getcookie():
 def femalefocused():
   name = request.cookies.get('search')
   # Direct to femalefocused.html
-  time.sleep(5)
+  # time.sleep(10)
   return render_template("femalefocused.html", title=name)
 
 # Route to international
@@ -51,7 +50,6 @@ def femalefocused():
 def international():
   name = request.cookies.get('search')
   # Direct to international.html
-  time.sleep(5)
   return render_template("international.html", title=name)
 
 # Route to low budget
@@ -59,9 +57,7 @@ def international():
 def lowbudget():
   name = request.cookies.get('search')
   # Direct to lowbudget.html
-  time.sleep(5)
   return render_template("low_budget.html", title=name)
-
 # Route to main explore page
 @app.route("/explore")
 def explore():
