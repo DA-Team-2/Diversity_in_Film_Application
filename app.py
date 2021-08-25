@@ -12,6 +12,7 @@ def index():
   name = request.cookies.get('search')
   # Return index template
   time.sleep(1)
+  return render_template("index.html", title=name)
 
 # Route to similarity.py and function for ML and filter
 @app.route("/similarity_scores", methods=['POST', 'GET'])
