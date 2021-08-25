@@ -38,7 +38,7 @@ function buildBubble() {
     "<b>Title:</b> %{text.Title}<br><b>Genre:</b> %{text.Genre}<br><b>Director:</b> %{text.Director}<br><b>Release Date:</b> %{text.Release_Date} <br> <b>Run Time:</b>%{text.Run_Time}<extra></extra>"
   }];
   var layout = {
-    title: `Female Lead or Directed Film Recommendations`,
+    title: `Female Directed Films`,
     font: { size: 13 },
     xaxis: { title: "Revenue" },
     yaxis: {title: "Budget"}
