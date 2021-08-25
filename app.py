@@ -53,12 +53,12 @@ def international():
   return render_template("international.html", title=name)
 
 # Route to low budget
-@app.route("/lowbudget")
-def lowbudget():
-  name = request.cookies.get('search')
-  # Direct to lowbudget.html
-  time.sleep(1)
-  return render_template("lowbudget.html", title=name)
+# @app.route("/lowbudget")
+# def lowbudget():
+#   name = request.cookies.get('search')
+#   # Direct to lowbudget.html
+#   time.sleep(1)
+#   return render_template("lowbudget.html", title=name)
 
 if __name__ == "__main__":
   app.run(debug=True)
