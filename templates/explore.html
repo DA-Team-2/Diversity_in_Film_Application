@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta http-equiv="Cache-control" content="no-cache">
+
 
     <title>Explore</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='../static/css/explore.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/main_styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/explore.css') }}">
 </head>
 
 <body>
@@ -39,7 +39,7 @@
               <a class="nav-link" href="/explore">Explore</a>
             </li>
             </ul>
-            </div>
+        </div>
             
     <div class="container">
         <div class="row">
@@ -54,20 +54,18 @@
                 <a class="btn btn-primary" href="/explore/international" target="_blank" role="button">Explore International Films</a>
             </div> -->
             <div class="row">
-                <!-- <h2>Low Budget</h2> -->
+              <div class="col-md-12">
                 <a class="btn btn-primary" href="/explore/low_budget" target="_blank" role="button">Low-Budget</a>
                 <a class="btn btn-primary" href="/explore/low_budget/popular" target="_blank" role="button">Most Popular Low-Budget</a>
                 <a class="btn btn-primary" href="/explore/low_budget/unpopular" target="_blank" role="button">Least Popular Low-Budget</a>
+              </div>
             </div>
-    </div>
-
-    
-
+        </div>
     </div> <!-- Close container -->
+  </div>
     
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="./static/js/jb_lowbudget.js"></script>
     
 </body>
 

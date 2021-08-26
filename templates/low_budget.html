@@ -10,17 +10,17 @@
 
     <title>Low-Budget Movie Recommendations</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> 
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">   -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='../static/css/low_budget.css') }}">
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/main_styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/low_budget.css') }}">
 </head>
 
 <body>
-
     <!-- Menu -->
     <div class="placeholder">
         <div class="menu">
@@ -60,8 +60,11 @@
         <div class="row">
             <div class="col-md-12 jumbotron text-center">
                 <h1>Low-Budget Movie Recommendations</h1>
-                <h2>Low-Budget: $0 to $15 million</h2>
-                <h3>Selected Film: {{ title }} </h3> 
+                <!-- Get the title of search -->
+                <div id="displayTitle">
+                    <h3>Selected Title: {{ title }}</h3> 
+                </div>
+                
             </div>
         </div>
     
@@ -75,9 +78,7 @@
         <!-- Table Title -->
         <div class="row">
             <!-- Title added by js -->
-            <div class="col-md-12 text-center" id="table-title">
-            </div>
-            <div class ="col-md-12 text-center" id="table-subtitle"></div>
+            <div class="col-md-12 text-center" id="table-title"></div>
         </div>
 
         <!--Table of Data-->
@@ -85,9 +86,11 @@
             <!--Column-->
             <div class="col-md-12 col sm-12">
                 <!--Table area-->
-                <div id="table-area">
+                <div class="table-container" style="overflow-x:auto;">
+                    <table class="lowBudgetTable">
+                <!-- <div id="table-area"> -->
                     <!--Films Table-->
-                    <table id="films-table" class="table table-striped table-responsive table-hover">
+                    <!-- <table id="films-table" class="table table-striped table-responsive table-hover"> -->
                         <!--Table Headers-->
                         <thead>
                             <!--Table Rows: Headers, added by js-->
@@ -101,11 +104,12 @@
         </div>
 
     </div> <!-- Close container -->
+</div> <!-- Close placeholder -->
 
     <!-- Import files & dependencies -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="./static/data/lowbudgetdata.js?$$REVISION$$"></script>
+    <script src="./static/data/lowbudgetdata.js"></script>
     <script src="./static/js/low_budget.js"></script>
     
 </body>
