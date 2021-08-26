@@ -1,4 +1,4 @@
-from app import lowbudget
+# from app import lowbudget
 import pandas as pd
 import os
 
