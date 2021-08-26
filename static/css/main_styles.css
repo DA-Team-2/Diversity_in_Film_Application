@@ -17,6 +17,9 @@
   background-size: cover;
   background-position: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .content-area{
