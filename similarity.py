@@ -19,8 +19,6 @@ def similarity(name_of_movie):
   name_of_movie = name_of_movie.lower()
   df["title"] = df["title"].str.lower()
 
-
-
   #set up new dataframe
   features = df[['index','title','release_date','cast','total_top_5_female_led','total_female_actors','percentage_female_cast','international','original_language','languages','genres','budget','budget_bins','popularity','tagline','keywords','production_companies','production_company_origin_country', 'director', 'overview']]
 
@@ -92,7 +90,14 @@ def similarity(name_of_movie):
 
   # Female-Led
   female_led = joined_df.sort_values(by=["percentage_female_directed", "similarity_score"], ascending=False)
-  top_fem = female_led[:20].to_json(orient="records")
+  female_led.reset_index(inplace=True, drop=True)
+
+  # If the searched title is in the dataset
+  if female_led["title"][0].lower() == movie_user_likes:
+    top_fem = female_led[1:21:1].to_json(orient="records")
+  else:
+    top_fem = female_led[:20].to_json(orient="records")
+
   f = open("./static/data/femaledata.js", "w")
   f.write("var data = ")
   f.write(top_fem)
@@ -100,7 +105,14 @@ def similarity(name_of_movie):
 
   # International
   international = joined_df.sort_values(by=["international", "similarity_score"], ascending=False)
-  top_intl = international[:20].to_json(orient="records")
+  international.reset_index(inplace=True, drop=True)
+
+  # If the searched title is in the dataset
+  if international["title"][0].lower() == movie_user_likes:
+    top_intl = international[1:21:1].to_json(orient="records")
+  else:
+    top_intl = international[:20].to_json(orient="records")
+    
   f = open("./static/data/intldata.js", "w")
   f.write("var data = ")
   f.write(top_intl)
@@ -109,7 +121,14 @@ def similarity(name_of_movie):
   # Low-Budget
   low_budget = joined_df.loc[joined_df["budget_bins"] == "0 to 15m"].copy()
   low_budget = low_budget.sort_values(by=["similarity_score"], ascending=False)
-  top_lowbudget = low_budget[:20].to_json(orient="records")
+  low_budget.reset_index(inplace=True, drop=True)
+
+  # If the searched title is in the dataset
+  if low_budget["title"][0].lower() == movie_user_likes:
+    top_lowbudget = low_budget[1:21:1].to_json(orient="records")
+  else:
+    top_lowbudget = low_budget[:20].to_json(orient="records")
+
   f = open("./static/data/lowbudgetdata.js", "w")
   f.write("var data = ")
   f.write(top_lowbudget)

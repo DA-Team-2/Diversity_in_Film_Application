@@ -1,41 +1,22 @@
-// d3.json("/api").then((data, err) => {
-    // var lowbudgetdata = data.low_budget;
-    var lowbudgetdata = data;
+// Grab data from js file
+var lowbudgetdata = data;
 
-    // if (err) throw err;
-    console.log(lowbudgetdata);
+// Check proper import
+console.log(lowbudgetdata);
 
-    // // API ENDPOINT GRABBING
-    // var title_dict = lowbudgetdata.title;
-    // var budget_dict = lowbudgetdata.budget;
-    // var revenue_dict = lowbudgetdata.revenue;
-    // var similarity_dict = lowbudgetdata.similarity_score;
+// Get first 10 records (for table)
+var slicedArray = lowbudgetdata.slice(0, 10);
+// console.log(slicedArray);
 
-    // var title = Object.values(title_dict)
-    // var budget = Object.values(budget_dict)
-    // var revenue = Object.values(revenue_dict)
-    // var similarity = Object.values(similarity_dict)
+// Get data needed from json (for bar graph)
+var title = slicedArray.map(d => d.title);
+var budget = slicedArray.map(d => d.budget);
+var revenue = slicedArray.map(d => d.revenue);
+var similarity = slicedArray.map(d => d.similarity_score);
 
-    // var films = titles.map(d=>d);
-
-    // console.log(title);
-    // console.log(budget);
-    // console.log(revenue);
-    // console.log(similarity)
-
-    // Get first 10 records (for table)
-    var slicedArray = lowbudgetdata.slice(0, 10);
-    // console.log(slicedArray);
-
-    // Get data needed from json (for bar graph)
-    var title = slicedArray.map(d => d.title);
-    var budget = slicedArray.map(d => d.budget);
-    var revenue = slicedArray.map(d => d.revenue);
-    var similarity = slicedArray.map(d => d.similarity_score);
-
-    // console.log(budget);
-    // console.log(revenue);
-    // console.log(similarity);
+// console.log(budget);
+// console.log(revenue);
+// console.log(similarity);
 
 // Function to create the table
 function createTable(slicedArray) {
@@ -123,5 +104,3 @@ function createChart(title, similarity, budget) {
 // Run functions
 createTable(slicedArray);
 createChart(title, similarity, budget);
-
-// });

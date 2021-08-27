@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@300&display=swap');
 
+.jumbotron {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 /* Button */
 .btn {
   background-color: rgb(252, 166, 180);
