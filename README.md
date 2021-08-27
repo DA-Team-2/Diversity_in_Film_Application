@@ -34,7 +34,7 @@ Users can view and interact with our final application here: https://movies-ml.h
 -	Our main python Flask application that routes data to our similarity.py app and each additional endpoint.
 
 **requirements.txt**
--	Essential library requirements needed for our application.
+-	Essential package dependencies needed for our final Heroku application.
 
 **similarity.py**
 -	Our similarity matrix that sorts by similar movies from the user’s input.  
