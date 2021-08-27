@@ -8,7 +8,7 @@ Our final application includes the following:
 - An index page which sorts films by similarity scores only. 
 - A Female Focused page that displays a graph of films directed by women and their corresponding budget and revenue, plus a table of similar films.
 - An International page which displays an interactive map of similar foreign language films.
-- A Low Budget page that displays films with budgets less than $15 million. Plus an explore page that allows users to view a table of the most popular and least popular low budget films.
+- A Low Budget page that displays films with budgets less than $15 million. Plus an explore page that allows users to view a table of the most popular and least popular similar low budget films.
 
 Users can view and interact with our final application here: https://movies-ml.herokuapp.com/
 
