@@ -49,5 +49,20 @@ function deleteTableBody() {
 // Load inital no filter movie table
 init();
 
+function hide() {
+  titleId = d3.select("#displayTitle")
+    .select("span")
+  
+  title =  titleId.text();
+  console.log(title);
+  //Hides it in the index.html
+  if (title.substring(0,16) == "You searched for") {
+    //console.log("Hidden!");
+    //d3.select("#displayTitle").style.display = "none";
+    document.getElementById("displayTitle").style.display = "none";
+  };
+}
+
 //Create event handlers 
 //button.on("click", updateTable);
+
