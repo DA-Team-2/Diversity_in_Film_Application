@@ -30,7 +30,7 @@ Users can view and interact with our final application here: https://movies-ml.h
 **templates**
 -	Contains each html file for our index page and each additional endpoint.
 
-**app.py **
+**app.py**
 -	Our main python Flask application that routes data to our similarity.py app and each additional endpoint.
 
 **requirements.txt**
