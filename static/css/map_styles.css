@@ -67,3 +67,5 @@
     z-index: 9999;
     position: absolute;
   }
+
+  body {overflow-y: scroll;}
