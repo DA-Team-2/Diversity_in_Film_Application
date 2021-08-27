@@ -18,8 +18,8 @@
   background-position: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  overflow: scroll;
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .content-area{
