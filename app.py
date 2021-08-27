@@ -2,6 +2,7 @@
 from flask import Flask, render_template, request, make_response
 import similarity
 import time
+
 # Create an instance of Flask
 app = Flask(__name__)
 
@@ -11,7 +12,7 @@ def index():
   name = request.cookies.get('search')
   # Return index template
   time.sleep(3)
-  return render_template("index.html", title=f"Your searched for: {name}")
+  return render_template("index.html", title=f"You searched for: {name}")
 
 # Route to similarity.py and function for ML and filter
 @app.route("/similarity_scores", methods=['POST', 'GET'])
@@ -29,7 +30,7 @@ def similarity_scores():
   # Define the response
   title = title.title()
   time.sleep(3)
-  resp = make_response(render_template('searched.html', title=f"Your searched for: {title}"))
+  resp = make_response(render_template('searched.html', title=f"You searched for: {title}"))
   resp.set_cookie('search', title)
 
   return resp
