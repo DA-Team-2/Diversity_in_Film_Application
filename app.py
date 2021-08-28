@@ -11,7 +11,7 @@ app = Flask(__name__)
 def index():
   name = request.cookies.get('search')
   # Return index template
-  time.sleep(3)
+  time.sleep(1)
   return render_template("index.html", title=f"You searched for: {name}")
 
 # Route to similarity.py and function for ML and filter
@@ -24,12 +24,12 @@ def similarity_scores():
       # Define the name of movie
       name_of_movie = similarity.similarity(title)
     except IndexError:
-      time.sleep(3)
+      time.sleep(1)
       return render_template("index.html", title=f"{title} is not a vaild entry.  Please try again!")
 
   # Define the response
   title = title.title()
-  time.sleep(3)
+  time.sleep(1)
   resp = make_response(render_template('searched.html', title=f"You searched for: {title}"))
   resp.set_cookie('search', title)
 
@@ -46,8 +46,7 @@ def getcookie():
 def femalefocused():
   name = request.cookies.get('search')
   # Direct to femalefocused.html
-  # time.sleep(10)
-  time.sleep(3)
+  time.sleep(1)
   return render_template("femalefocused.html", title=name)
 
 # Route to international
@@ -55,7 +54,7 @@ def femalefocused():
 def international():
   name = request.cookies.get('search')
   # Direct to international.html
-  time.sleep(3)
+  time.sleep(1)
   return render_template("international.html", title=name)
 
 # Route to low budget
@@ -63,34 +62,34 @@ def international():
 def lowbudget():
   name = request.cookies.get('search')
   # Direct to lowbudget.html
-  time.sleep(3)
+  time.sleep(1)
   return render_template("low_budget.html", title=name)
 # Route to main explore page
 @app.route("/explore")
 def explore():
   # Direct to explore.html
-  time.sleep(3)
+  time.sleep(1)
   return render_template("explore.html")
 
 # Route to main low-budget explore
 @app.route("/explore/low_budget")
 def explore_lowbudget():
   # Direct to explore.html
-  time.sleep(3)
+  time.sleep(1)
   return render_template("em_low_budget.html")
 
 # Route to popular low-budget explore
 @app.route("/explore/low_budget/popular")
 def explore_pop_lowbudget():
   # Direct to explore.html
-  time.sleep(3)
+  time.sleep(1)
   return render_template("em_pop_low.html")
 
 # Route to unpopular low-budget explore
 @app.route("/explore/low_budget/unpopular")
 def explore_unpop_lowbudget():
   # Direct to explore.html
-  time.sleep(3)
+  time.sleep(1)
   return render_template("em_unpop_low.html")
 
 if __name__ == "__main__":
